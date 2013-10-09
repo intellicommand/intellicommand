@@ -1,0 +1,53 @@
+<Window x:Class="IntelliCommand.Presentation.CommandsInfoWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:System="clr-namespace:System;assembly=mscorlib"
+        xmlns:Shell="clr-namespace:Microsoft.VisualStudio.Shell;assembly=Microsoft.VisualStudio.Shell.10.0"
+        xmlns:Presentation="clr-namespace:IntelliCommand.Presentation" SizeToContent="WidthAndHeight"
+        SnapsToDevicePixels="True"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        Background="Transparent" 
+        AllowsTransparency="True"
+        Topmost="True"
+        WindowStartupLocation="Manual"  
+        IsHitTestVisible="False" 
+        IsEnabled="False" 
+        Focusable="False"
+        ShowInTaskbar="False"
+        IsManipulationEnabled="False">
+    <Window.Resources>
+
+        <SolidColorBrush x:Key="BackgroundBrush" Color="Black" />
+        <SolidColorBrush x:Key="HiglightedTextBrush" Color="LightBlue" />
+        <SolidColorBrush x:Key="TextBrush" Color="White" />
+        <System:Double x:Key="BackgroundOpacity" >0.7</System:Double>
+
+        <SolidColorBrush x:Key="VsBackgroundBrush" Color="{DynamicResource ResourceKey={x:Static Shell:VsColors.ToolWindowBackgroundKey}}" />
+        <SolidColorBrush x:Key="VsHiglightedTextBrush" Color="{DynamicResource ResourceKey={x:Static Shell:VsColors.PanelHyperlinkKey}}" />
+        <SolidColorBrush x:Key="VsTextBrush" Color="{DynamicResource ResourceKey={x:Static Shell:VsColors.ToolWindowTextKey}}" />
+
+    </Window.Resources>
+
+    <Border Background="{DynamicResource ResourceKey=BackgroundBrush}" 
+            Opacity="{DynamicResource ResourceKey=BackgroundOpacity}"
+            x:Name="mainControl"
+            Width="Auto" Height="Auto" 
+            TextElement.FontSize="{DynamicResource ResourceKey=VsFont.EnvironmentFontSize}"
+            TextElement.FontFamily="{DynamicResource ResourceKey=VsFont.EnvironmentFontFamily}">
+        
+        <StackPanel>
+            <Presentation:CommandsPanel x:Name="commandsPanel" Margin="7"
+                                 CombinationTextBrush="{DynamicResource ResourceKey=HiglightedTextBrush}"
+                                 CommandTextBrush="{DynamicResource ResourceKey=TextBrush}"
+                                 ColumnSeparatorWidth="7"
+                                 RowSeparatorHeight="1" />
+
+            <StackPanel Margin="7, 0, 7, 7" Orientation="Horizontal" x:Name="chordKeysPanel">
+                <TextBlock Foreground="{DynamicResource ResourceKey=TextBrush}" Text="Chord keys: " />
+                <TextBlock Foreground="{DynamicResource ResourceKey=HiglightedTextBrush}" x:Name="chordKeys" />
+            </StackPanel>
+        </StackPanel>
+        
+    </Border>
+</Window>

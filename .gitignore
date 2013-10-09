@@ -1,0 +1,13 @@
+obj/
+Obj/
+bin/
+Bin/
+_ReSharper.*
+*.user
+*.resharper
+*.suo
+*.cache
+StyleCop.Cache
+packages
+TestResults
+FakesAssemblies
