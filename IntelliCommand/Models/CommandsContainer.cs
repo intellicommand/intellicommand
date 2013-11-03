@@ -4,9 +4,14 @@
 
 namespace IntelliCommand.Models
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Windows.Input;
+
+    using IntelliCommand.Services;
+
+    using Microsoft.VisualStudio;
 
     /// <summary>
     /// The commands container.
@@ -17,9 +22,14 @@ namespace IntelliCommand.Models
 
         private readonly Dictionary<ModifierKeys, Dictionary<string, Dictionary<Key, List<CommandInfo>>>> container = new Dictionary<ModifierKeys, Dictionary<string, Dictionary<Key, List<CommandInfo>>>>();
 
-        public CommandsContainer(int keyCombinationLevel)
+        private readonly IAppServiceProvider appServiceProvider;
+        private readonly IOutputWindowService outputWindowService;
+
+        internal CommandsContainer(IAppServiceProvider appServiceProvider, int keyCombinationLevel)
         {
             this.keyCombinationLevel = keyCombinationLevel;
+            this.appServiceProvider = appServiceProvider;
+            this.outputWindowService = appServiceProvider.GetService<IOutputWindowService>();
         }
 
         /// <summary>
@@ -68,7 +78,7 @@ namespace IntelliCommand.Models
                 {
                     foreach (var commandInfo in commands)
                     {
-                        if (commandInfo.VsCommand.IsAvailable)
+                        if (IsAvailable(commandInfo.VsCommand))
                         {
                             yield return commandInfo;
                         }
@@ -86,7 +96,7 @@ namespace IntelliCommand.Models
                 {
                     foreach (var commandInfo in commands)
                     {
-                        if (commandInfo.VsCommand.IsAvailable)
+                        if (IsAvailable(commandInfo.VsCommand))
                         {
                             yield return commandInfo;
                         }
@@ -108,6 +118,27 @@ namespace IntelliCommand.Models
             }
 
             return null;
+        }
+
+        private bool IsAvailable(EnvDTE.Command command)
+        {
+            try
+            {
+                return command.IsAvailable;
+            }
+            catch (Exception e)
+            {
+                if (ErrorHandler.IsCriticalException(e))
+                {
+                    throw;
+                }
+                else
+                {
+                    this.outputWindowService.OutputLine("Cannot check availability of command: {0}", e);
+                }
+            }
+
+            return false;
         }
     }
 }

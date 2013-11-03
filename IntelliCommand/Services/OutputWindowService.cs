@@ -5,8 +5,12 @@
 namespace IntelliCommand.Services
 {
     using System;
+    using System.Diagnostics;
 
     using EnvDTE;
+
+    using Microsoft.VisualStudio;
+    using System.Globalization;
 
     /// <summary>
     /// The output window service.
@@ -46,12 +50,25 @@ namespace IntelliCommand.Services
 
         private void OutputString(bool fActivate, string messageFormat, params object[] arguments)
         {
-            var vsOutputWindowPane = this.GetOutputWindowPane();
-            string message = arguments.Length == 0 ? messageFormat : string.Format(messageFormat, arguments);
-            vsOutputWindowPane.OutputString(message);
-            if (fActivate)
+            string message = arguments.Length == 0 ? messageFormat : string.Format(CultureInfo.InvariantCulture, messageFormat, arguments);
+
+            try
             {
-                this.ShowOutputPane();
+                var vsOutputWindowPane = this.GetOutputWindowPane();
+                vsOutputWindowPane.OutputString(message);
+                if (fActivate)
+                {
+                    this.ShowOutputPane();
+                }
+            }
+            catch (Exception e)
+            {
+                if (ErrorHandler.IsCriticalException(e))
+                {
+                    throw;
+                }
+
+                Debug.WriteLine("Cannot write to output window: {0}. \n\tOriginal message: {1}", e, message);
             }
         }
 

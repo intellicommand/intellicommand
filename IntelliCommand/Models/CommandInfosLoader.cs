@@ -39,7 +39,7 @@ namespace IntelliCommand.Models
         /// <returns>The list of command infos.</returns>
         public CommandsContainer LoadCommands()
         {
-            var commands = new CommandsContainer(keyCombinationLevel: 0);
+            var commands = new CommandsContainer(this.appServiceProvider, keyCombinationLevel: 0);
 
             var dte = this.appServiceProvider.GetService<DTE>() as DTE2; 
             if (dte != null)

@@ -112,7 +112,9 @@ namespace IntelliCommand.Services
                 currentWindow = parent;
             }
 
-            bool fVsWindow = Application.Current.Windows.Cast<Window>().Any(
+            bool fVsWindow = 
+                Application.Current.Windows != null 
+                && Application.Current.Windows.Cast<Window>().Any(
                     window => new WindowInteropHelper(window).Handle == currentWindow);
 
             return fVsWindow;
