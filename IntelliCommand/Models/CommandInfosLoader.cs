@@ -4,6 +4,10 @@
 
 namespace IntelliCommand.Models
 {
+#if DEBUG
+    using System.Text;
+#endif
+
     using EnvDTE;
 
     using EnvDTE80;

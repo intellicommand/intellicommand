@@ -125,7 +125,6 @@ namespace IntelliCommand.Presentation
             }
             else
             {
-                
                 this.Resources["BackgroundBrush"] = Brushes.Black;
                 this.Resources["TextBrush"] = Brushes.White;
                 this.Resources["HiglightedTextBrush"] = Brushes.LightBlue;
