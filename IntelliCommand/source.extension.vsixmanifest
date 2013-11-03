@@ -3,7 +3,7 @@
   <Identifier Id="398b3606-0cbd-450f-88b6-f40cd85e697e">
     <Name>IntelliCommand</Name>
     <Author>IntelliCommand</Author>
-    <Version>1.0.21014.1</Version>
+    <Version>1.0.31113.1</Version>
     <Description xml:space="preserve">Helps to remember shortcut keys. This extension is supported for Visual Studio 2010/2012 Professional and higher.</Description>
     <Locale>1033</Locale>
     <InstalledByMsi>false</InstalledByMsi>
