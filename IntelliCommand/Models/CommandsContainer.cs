@@ -78,7 +78,7 @@ namespace IntelliCommand.Models
                 {
                     foreach (var commandInfo in commands)
                     {
-                        if (IsAvailable(commandInfo.VsCommand))
+                        if (this.IsAvailable(commandInfo.VsCommand))
                         {
                             yield return commandInfo;
                         }
@@ -96,7 +96,7 @@ namespace IntelliCommand.Models
                 {
                     foreach (var commandInfo in commands)
                     {
-                        if (IsAvailable(commandInfo.VsCommand))
+                        if (this.IsAvailable(commandInfo.VsCommand))
                         {
                             yield return commandInfo;
                         }

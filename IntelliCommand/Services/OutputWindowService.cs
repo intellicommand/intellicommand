@@ -6,11 +6,11 @@ namespace IntelliCommand.Services
 {
     using System;
     using System.Diagnostics;
+    using System.Globalization;
 
     using EnvDTE;
 
     using Microsoft.VisualStudio;
-    using System.Globalization;
 
     /// <summary>
     /// The output window service.
