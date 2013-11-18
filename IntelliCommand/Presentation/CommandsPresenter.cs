@@ -16,7 +16,7 @@ namespace IntelliCommand.Presentation
     using CommandBinding = IntelliCommand.Models.CommandBinding;
 
     /// <summary>
-    /// The window view model.
+    /// The CommandsPresenter class.
     /// </summary>
     internal class CommandsPresenter : IDisposable
     {

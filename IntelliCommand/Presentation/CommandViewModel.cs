@@ -22,14 +22,14 @@ namespace IntelliCommand.Presentation
         private readonly IPackageSettings packageSettings;
 
         private readonly List<string> scopes = new List<string>();
-        private readonly List<KeyCombination> combinationes = new List<KeyCombination>();
+        private readonly List<KeyCombination> combinations = new List<KeyCombination>();
 
         /// <summary>
         /// Create new command view model.
         /// </summary>
-        /// <param name="commandName">Command UI name.s</param>
-        /// <param name="scope">The default scope where this command was find first time.</param>
-        /// <param name="combination">The combination which was found for this command at first.</param>
+        /// <param name="commandName">Command UI name.</param>
+        /// <param name="scope">The default scope where this command was found the first time.</param>
+        /// <param name="combination">The first combination which was found for this command.</param>
         /// <param name="packageSettings">Current Visual Studio settings.</param>
         public CommandViewModel(string commandName, string scope, KeyCombination combination, IPackageSettings packageSettings)
         {
@@ -40,7 +40,7 @@ namespace IntelliCommand.Presentation
         }
         
         /// <summary>
-        /// Formatted command name. If user want to see scope of current command - it will be included in brackets.
+        /// Formatted command name. If the user wants to see the scope of the command, it will be included in brackets.
         /// </summary>
         public string Name
         {
@@ -57,27 +57,27 @@ namespace IntelliCommand.Presentation
         }
 
         /// <summary>
-        /// First command combination which can work for current command.
+        /// First command combination which can work for this command.
         /// </summary>
         public KeyCombination KeyCombination
         {
             get
             {
-                if (this.combinationes.Count == 1)
+                if (this.combinations.Count == 1)
                 {
-                    return this.combinationes[0];
+                    return this.combinations[0];
                 }
 
-                Debug.Assert(this.combinationes.Count <= 2, "combinationes.Count");
+                Debug.Assert(this.combinations.Count <= 2, "combinations.Count");
 
-                return this.combinationes.OrderByDescending(x => x.Modifiers).First();
+                return this.combinations.OrderByDescending(x => x.Modifiers).First();
             }
         }
 
         /// <summary>
-        /// Add scope for current command view model.
+        /// Add scope for the command view model.
         /// </summary>
-        /// <param name="scope">Scope which also accept current key combination.</param>
+        /// <param name="scope">Scope which also accepts the current key combination.</param>
         public void AddScope(string scope)
         {
             if (!this.scopes.Contains(scope))
@@ -87,25 +87,25 @@ namespace IntelliCommand.Presentation
         }
 
         /// <summary>
-        /// Add one more combination which can invoke current command.
+        /// Add another combinations which can invoke this command.
         /// </summary>
         /// <param name="combination"></param>
         public void AddCombination(KeyCombination combination)
         {
-            if (!this.combinationes.Contains(combination))
+            if (!this.combinations.Contains(combination))
             {
-                this.combinationes.Add(combination);
+                this.combinations.Add(combination);
             }
         }
 
         /// <summary>
-        /// Check if current combination exists in current command view model container.
+        /// Check if a combination exists in the command view model container.
         /// </summary>
         /// <param name="keyCombination">The key combination.</param>
         /// <returns>Key combination is known combination.</returns>
         public bool Contains(KeyCombination keyCombination)
         {
-            return this.combinationes.Contains(keyCombination);
+            return this.combinations.Contains(keyCombination);
         }
     }
 }

@@ -13,7 +13,7 @@ namespace IntelliCommand.Services
     using System.Windows.Interop;
 
     /// <summary>
-    /// Listens keyboard globally.
+    /// The KeyboardListenerService. Listens to the keyboard globally.
     /// </summary>
     /// <remarks>Uses WH_KEYBOARD_LL.</remarks>
     internal class KeyboardListenerService : IKeyboardListenerService, IDisposable
@@ -37,7 +37,7 @@ namespace IntelliCommand.Services
         /// </summary>
         public KeyboardListenerService()
         {
-            // We have to store the HookCallback, so that it is not garbage collected runtime
+            // We have to store the HookCallback so that it is not garbage collected
             this.hookedLowLevelKeyboardProc = this.LowLevelKeyboardProc;
 
             // Set the hook
@@ -53,12 +53,12 @@ namespace IntelliCommand.Services
         }
 
         /// <summary>
-        /// Fired when any of the keys is pressed down.
+        /// Fired when any key is pressed down.
         /// </summary>
         public event EventHandler<RawKeyEventArgs> KeyDown;
 
         /// <summary>
-        /// Fired when any of the keys is released.
+        /// Fired when any key is released.
         /// </summary>
         public event EventHandler<RawKeyEventArgs> KeyUp;
 
@@ -121,7 +121,7 @@ namespace IntelliCommand.Services
         }
 
         /// <summary>
-        /// HookCallbackAsync procedure that calls accordingly the KeyDown or KeyUp events.
+        /// HookCallbackAsync procedure that calls the KeyDown or KeyUp events.
         /// </summary>
         /// <param name="keyEvent">Keyboard event.</param>
         /// <param name="vkCode">The vkCode.</param>

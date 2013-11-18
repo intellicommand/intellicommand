@@ -40,7 +40,7 @@ namespace IntelliCommand.Shell
     [InstalledProductRegistration("#110", "#112", "1.0", IconResourceID = 400)]
     [Guid(GuidList.GuidIntelliCommandPkgString)]
     [ProvideAutoLoad(UIContextGuids.NoSolution)]
-    [ProvideOptionPage(typeof(IntelliCommandOptionsDialogPage), "Intelli Command", "General", 0, 0, true)]
+    [ProvideOptionPage(typeof(IntelliCommandOptionsDialogPage), "IntelliCommand", "General", 0, 0, true)]
     public sealed class IntelliCommandPackage : Package, IAppServiceProvider
     {
         private static IAppServiceProvider appServiceProvider;

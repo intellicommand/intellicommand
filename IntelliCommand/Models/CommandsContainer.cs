@@ -14,13 +14,14 @@ namespace IntelliCommand.Models
     using Microsoft.VisualStudio;
 
     /// <summary>
-    /// The commands container.
+    /// The CommandsContainer class.
     /// </summary>
     public class CommandsContainer
     {
         private readonly int keyCombinationLevel;
 
-        private readonly Dictionary<ModifierKeys, Dictionary<string, Dictionary<Key, List<CommandInfo>>>> container = new Dictionary<ModifierKeys, Dictionary<string, Dictionary<Key, List<CommandInfo>>>>();
+        private readonly Dictionary<ModifierKeys, Dictionary<string, Dictionary<Key, List<CommandInfo>>>> container 
+            = new Dictionary<ModifierKeys, Dictionary<string, Dictionary<Key, List<CommandInfo>>>>();
 
         private readonly IAppServiceProvider appServiceProvider;
         private readonly IOutputWindowService outputWindowService;
@@ -33,10 +34,10 @@ namespace IntelliCommand.Models
         }
 
         /// <summary>
-        /// The add command info.
+        /// Add command info to the container.
         /// </summary>
         /// <param name="commandInfo">
-        /// The command Info.
+        /// The command info to add.
         /// </param>
         public void Add(CommandInfo commandInfo)
         {

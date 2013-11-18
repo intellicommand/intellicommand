@@ -10,7 +10,7 @@ namespace IntelliCommand.Models
     using System.Windows.Input;
 
     /// <summary>
-    /// The command binding parser.
+    /// The CommandBindingParser class.
     /// </summary>
     public class CommandBindingParser
     {
@@ -77,7 +77,7 @@ namespace IntelliCommand.Models
         /// <param name="binding">The binding.</param>
         /// <returns>The keys combination</returns>
         /// <remarks>
-        /// See description of the bindings on the MSDN http://msdn.microsoft.com/en-us/library/envdte.command.bindings.aspx
+        /// See description of the bindings on MSDN http://msdn.microsoft.com/en-us/library/envdte.command.bindings.aspx
         /// </remarks>
         public CommandBinding ParseBinding(string binding)
         {

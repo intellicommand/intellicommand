@@ -7,7 +7,7 @@ namespace IntelliCommand.Models
     using System.Diagnostics;
 
     /// <summary>
-    /// The command binding.
+    /// The CommandBinding class.
     /// </summary>
     public class CommandBinding
     {

@@ -17,12 +17,13 @@ namespace IntelliCommand.Services
         event EventHandler SettingsChanged;
 
         /// <summary>
-        /// Delay in milliseconds before show IntelliCommand window when user hold modifiers key.
+        /// Delay in milliseconds before showing the IntelliCommand window when the user holds a modifier key.
         /// </summary>
         int ModifiersCombinationsShowDelay { get; }
 
         /// <summary>
-        /// Delay in milliseconds before show IntelliCommand window when user press first combination of chord keys.
+        /// Delay in milliseconds before showing the IntelliCommand window when the user presses the first part 
+        /// of a shortcut chord.
         /// </summary>
         int ChordCombinationsShowDelay { get; }
 
@@ -32,12 +33,12 @@ namespace IntelliCommand.Services
         int SelectedSortIndex { get; }
 
         /// <summary>
-        /// Inclide command scopes in name.
+        /// Include command scopes in name.
         /// </summary>
         bool ShowCommandScopeName { get; }
 
         /// <summary>
-        /// Intelli Command transparent in %.
+        /// IntelliCommand transparency in %.
         /// </summary>
         int WindowsOpacity { get; }
 

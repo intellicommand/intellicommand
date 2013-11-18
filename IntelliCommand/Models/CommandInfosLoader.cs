@@ -9,13 +9,11 @@ namespace IntelliCommand.Models
 #endif
 
     using EnvDTE;
-
     using EnvDTE80;
-
     using IntelliCommand.Services;
 
     /// <summary>
-    /// The parser of command combination.
+    /// The CommandInfosLoader class.
     /// </summary>
     internal class CommandInfosLoader
     {
@@ -34,7 +32,7 @@ namespace IntelliCommand.Models
         }
 
         /// <summary>
-        /// Load command.
+        /// Load commands.
         /// </summary>
         /// <returns>The list of command infos.</returns>
         public CommandsContainer LoadCommands()

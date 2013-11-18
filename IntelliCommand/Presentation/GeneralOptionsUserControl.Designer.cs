@@ -88,7 +88,7 @@
             this.groupBox1.Size = new System.Drawing.Size(619, 77);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Intelli Command Window Show Delays";
+            this.groupBox1.Text = "IntelliCommand Window Show Delays";
             // 
             // numericChordCombinationsShowDelay
             // 

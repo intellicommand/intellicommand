@@ -7,7 +7,7 @@ namespace IntelliCommand.Services
     using System;
 
     /// <summary>
-    /// The application services provider.
+    /// The application service provider.
     /// </summary>
     internal interface IAppServiceProvider : IServiceProvider
     {

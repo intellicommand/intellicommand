@@ -12,7 +12,7 @@ namespace IntelliCommand.Presentation
     using IntelliCommand.Services;
 
     /// <summary>
-    /// Container of commands which we need to show to user.
+    /// Container of commands which we need to show the user.
     /// </summary>
     internal class CurrentCommandsContainer
     {
@@ -90,7 +90,7 @@ namespace IntelliCommand.Presentation
 
         public IList<KeyCombination> GetChordCombinations()
         {
-            // Some not chord keys can override chord combinations
+            // Some non-chord keys can override chord combinations
             return this.chordCombinationCandidates
                 .Where(chordCombination => !this.commandViewModels.Values.Any(x => x.Contains(chordCombination)))
                 .OrderBy(x => x).ToList();

@@ -5,7 +5,7 @@
 namespace IntelliCommand.Models
 {
     /// <summary>
-    /// Sort order for elements in Intelli Command.
+    /// Sort order for elements in IntelliCommand.
     /// </summary>
     public enum SortOrder : int
     {

@@ -21,7 +21,7 @@ namespace IntelliCommand.Shell
     {
         public IntelliCommandOptionsDialogPage()
         {
-            this.SettingsRegistryPath = "Intelli Command";
+            this.SettingsRegistryPath = "IntelliCommand";
             this.ModifiersCombinationsShowDelay = 2000;
             this.ChordCombinationsShowDelay = 1500;
             this.SelectedSortIndex = 0;

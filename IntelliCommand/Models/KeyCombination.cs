@@ -8,7 +8,7 @@ namespace IntelliCommand.Models
     using System.Windows.Input;
 
     /// <summary>
-    /// The key combination.
+    /// The KeyCombination class.
     /// </summary>
     public class KeyCombination : IComparable, IComparable<KeyCombination>
     {
@@ -24,7 +24,7 @@ namespace IntelliCommand.Models
         /// The key.
         /// </param>
         /// <param name="stringView">
-        /// String presentation of current key.
+        /// String representation of current key.
         /// </param>
         public KeyCombination(ModifierKeys modifierKeys, Key key, string stringView)
         {

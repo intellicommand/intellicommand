@@ -15,7 +15,7 @@ namespace IntelliCommand.Models
         /// Check whether <paramref name="key"/> contains key which is <see cref="ModifierKeys"/>.
         /// </summary>
         /// <param name="key">The key.</param>
-        /// <returns>If this is modifier key.</returns>
+        /// <returns>If this is a modifier key.</returns>
         public static bool IsModifierKeys(Key key)
         {
             return ToModifierKeys(key) != ModifierKeys.None;

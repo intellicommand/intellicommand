@@ -10,14 +10,14 @@ namespace IntelliCommand.Services
     internal interface IOutputWindowService
     {
         /// <summary>
-        /// Write to output window the line.
+        /// Write line to output window.
         /// </summary>
         /// <param name="messageFormat">The message.</param>
         /// <param name="arguments">The arguments.</param>
         void OutputLine(string messageFormat, params object[] arguments);
 
         /// <summary>
-        /// Write to output window the string.
+        /// Write string to output window.
         /// </summary>
         /// <param name="messageFormat">The message.</param>
         /// <param name="arguments">The arguments.</param>

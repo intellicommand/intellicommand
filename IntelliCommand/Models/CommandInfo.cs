@@ -7,7 +7,8 @@ namespace IntelliCommand.Models
     using EnvDTE;
 
     /// <summary>
-    /// The command info class. Contains information about command and combination of keys to invoke this command.
+    /// The CommandInfo class. Contains information about a command and the combination
+    /// of keys to invoke this command.
     /// </summary>
     public class CommandInfo
     {

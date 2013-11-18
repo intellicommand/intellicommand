@@ -32,7 +32,7 @@ namespace IntelliCommand.Services
         /// Initializes a new instance of the <see cref="CommandScopeService"/> class.
         /// </summary>
         /// <param name="appServiceProvider">
-        /// The application services provider.
+        /// The application service provider.
         /// </param>
         public CommandScopeService(IAppServiceProvider appServiceProvider)
         {
