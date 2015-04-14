@@ -3,7 +3,7 @@ IntelliCommand
 
 IntelliCommand is a Visual Studio extension that helps you use keyboard shortcuts. It started as a hackathon project by a few devs on the Visual Studio team at Microsoft.
 
-This extension is supported on Visual Studio 2010, 2012, and 2013 on Professional and higher.
+This extension is supported on Visual Studio 2010, 2012, and 2013 on Professional and higher, and on Visual Studio Community 2013.
 
 You can get the latest working version from the [Visual Studio Gallery][1].
 
